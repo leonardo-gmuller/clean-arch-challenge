@@ -5,7 +5,7 @@ migrate:
 	migrate -path=internal/infra/database/migrations -database "mysql://root:root@tcp(localhost:3306)/orders" -verbose up
 
 migratedown:
-	migrate -path=infra/database/migrations -database "mysql://root:root@tcp(localhost:3306)/orders" -verbose down
+	migrate -path=internal/infra/database/migrations -database "mysql://root:root@tcp(localhost:3306)/orders" -verbose down 1
 
 start:
 	go run cmd/ordersystem/main.go cmd/ordersystem/wire_gen.go

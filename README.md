@@ -27,33 +27,17 @@ Certifique-se de que você possui os seguintes softwares instalados:
    ```bash
    git clone https://github.com/leonardo-gmuller/clean-arch-challenge
    cd clean-arch-challenge
-   go mod tidy #Para baixar todos os módulos necessários
    ```
 
 2. Suba os contêineres Docker:
    ```bash
    docker compose up -d
    ```
-3. Aplicar as migrações manualmente:
-    ```bash
-    make migrate
-    ```
-    ou se não tiver o `make` instalado:
+Esse comando irá:
 
-    ```bash
-    migrate -path=internal/infra/database/migrations -database "mysql://root:root@tcp(localhost:3306)/orders" -verbose up
-    ```
+- Configurar o banco de dados e suas tabelas.
 
-4. Inicie a aplicação:
-    ```bash
-    make start
-    ```
-
-    ou
-
-    ```bash
-    go run cmd/ordersystem/main.go cmd/ordersystem/wire_gen.go
-    ```
+- Deixar a aplicação pronta para receber requisições.
 
 ---
 
